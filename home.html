@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: rgb(66, 28, 0);
+      color: #f5f5dc;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .home-container {
+      width: 700px;
+      margin-top: 20px;
+      background: #5b2700;
+      border-radius: 40px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      position: relative;
+    }
+
+    .background-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .content-wrapper {
+      position: relative;
+      z-index: 2;
+      padding-bottom: 30px;
+    }
+
+    .header {
+      text-align: center;
+      padding: 20px 0;
+      font-size: 40px;
+      font-family: 'UnifrakturCook', cursive;
+      background: rgba(91,39,0,0.85); 
+      color: #fff;
+      z-index: 3;
+      position: relative;
+    }
+
+    /* BACK BUTTON */
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-family: 'UnifrakturCook', cursive;
+      color: #fff;
+      text-decoration: none;
+      font-size: 22px;
+      z-index: 4;
+    }
+
+    .back-btn:hover {
+      text-decoration: underline;
+    }
+
+    .section {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 30px;
+      font-family: 'UnifrakturCook', cursive;
+      color: #fff;
+    }
+
+    .image-box {
+      width: 100%;
+      height: 200px;
+      background: rgba(128,128,128,0.85);
+      margin: 15px auto;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="home-container">
+
+    <!-- ✅ BACK LINK ADDED -->
+    <a href="index.html" class="back-btn" title="Go back to main page">BACK </a>
+
+    <img src="https://i.pinimg.com/736x/65/c6/98/65c698ff888de9c30db2eb2c3f205124.jpg"
+         class="background-img">
+
+    <div class="header">HOME</div>
+
+    <div class="content-wrapper">
+
+      <div class="section">To Read List</div>
+      <div class="image-box"></div>
+
+      <div class="section">Read List</div>
+      <div class="image-box"></div>
+
+    </div>
+
+  </div>
+
+</body>
+<script>
+  function displayList(listType, containerId) {
+    const list = JSON.parse(localStorage.getItem(listType)) || [];
+    const container = document.getElementById(containerId);
+    container.innerHTML = '';
+  
+    list.forEach(book => {
+      const div = document.createElement('div');
+      div.style.display = 'flex';
+      div.style.alignItems = 'center';
+      div.style.background = 'rgba(255,255,255,0.2)';
+      div.style.margin = '5px';
+      div.style.padding = '5px';
+      div.style.borderRadius = '10px';
+      div.innerHTML = `
+        <img src="${book.cover}" style="width:60px;height:90px;margin-right:10px;">
+        <strong>${book.title}</strong> by ${book.author}
+      `;
+      container.appendChild(div);
+    });
+  }
+  
+  // Display lists using your existing boxes
+  displayList('home', 'homeList');
+  displayList('read', 'readList');
+  </script>
+</html>
