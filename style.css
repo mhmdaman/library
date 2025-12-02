@@ -128,3 +128,53 @@ body {
     box-shadow: 0 0 12px rgba(255, 215, 0, 1);
     background: rgba(255, 255, 255, 0.35); /* slightly brighter on focus */
 }
+/* === GOOGLE BOOK SEARCH RESULTS === */
+
+.results-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.book-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 8px rgba(0,0,0,0.15);
+    color: black;
+}
+
+.book-card img {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.book-card h3 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.book-card p {
+    font-size: 0.9rem;
+    margin: 5px 0;
+}
+
+.add-to-read {
+    padding: 10px 16px;
+    margin-top: 10px;
+    border: none;
+    background: #5b2700;
+    color: white;
+    font-family: 'UnifrakturCook', cursive;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.add-to-read:hover {
+    background: #803600;
+}
