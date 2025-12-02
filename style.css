@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+   
+    height: 100vh;
+    color: #f5f5dc; /* Cream text */
+  }
+  
+  .app-container {
+    background: rgb(66, 28, 0); /* Transparent brown overlay */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .card {
+    position: relative;
+    width: 700px;
+    height: 600px;
+    background: #5b2700;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  }
+  .card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display:block; /* keeps image proportions */
+}
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width:  100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertically center */
+  align-items: center;     /* horizontally center */
+  text-align: center;
+  padding: 20px;
+  background: rgba(0,0,0,0.4); /* optional dark overlay for readability */
+}
+
+.card-content {
+  padding: 15px;
+}
+  
+ nav {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index:10
+    
+  }
+  
+  nav a {
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size:1.8rem;
+  }
+  nav a:hover {
+                  /* change text color on hover */
+    border-bottom: 2px solid white; /* underline effect */
+}
+  
+  .card  {
+    font-size: 2.2rem;
+    margin-top: 100px;
+    font-family: 'UnifrakturCook', cursive; /* Gothic style */
+  }
+  .card  {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    font-family: 'UnifrakturCook', cursive; /* Gothic style */
+  }
+  
+  .btn {
+    padding: 12px 24px;
+    background: #5b2700;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'UnifrakturCook', cursive;
+  }
+  .content h1,
+  .content h2{
+    font-size:3.6rem;;
+    color:#f5f5dc;
+    margin-bottom:15px
+  }
+  
+  .btn:hover {
+    background: #803600;
+  }
+  .textbox input {
+    width: 1000%;              /* Increased size */
+    max-width: 500px;         /* Prevent oversized stretching */
+    padding: 16px;            /* Bigger padding */
+    font-size: 1.3rem;        /* Larger text */
+    border-radius: 100px;
+    border: 2px solid rgba(255, 215, 0, 0.9); /* brighter gold border */
+    background: rgba(255, 255, 255, 0.25); /* lighter textbox color */
+    color: #2b1a00;           /* dark brown text for readability */
+    margin-bottom: 30px;
+    font-family: 'UnifrakturCook', cursive;
+    text-align: center;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Placeholder styling */
+.textbox::placeholder {
+    color: rgba(120, 90, 20, 0.8); /* warm brown placeholder */
+    font-style: italic;
+}
+
+/* Focus effect */
+.textbox:focus {
+    border-color: #ffd700;
+    box-shadow: 0 0 12px rgba(255, 215, 0, 1);
+    background: rgba(255, 255, 255, 0.35); /* slightly brighter on focus */
+}
